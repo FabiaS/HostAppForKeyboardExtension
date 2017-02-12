@@ -14,16 +14,23 @@
 		053D21FE1D8AB142001DBAD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053D21FC1D8AB142001DBAD4 /* LaunchScreen.storyboard */; };
 		053D22281D8AB180001DBAD4 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D22271D8AB180001DBAD4 /* KeyboardViewController.swift */; };
 		056E467B1DEC68580096B7F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056E467A1DEC68580096B7F2 /* UIKit.framework */; };
+		0586A57F1E50E76F0008C209 /* MyCustomFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058FFAB21E50D19E0058F029 /* MyCustomFramework.framework */; };
+		0586A5801E50E76F0008C209 /* MyCustomFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 058FFAB21E50D19E0058F029 /* MyCustomFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0586A5841E50E7780008C209 /* MyCustomFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058FFAB21E50D19E0058F029 /* MyCustomFramework.framework */; };
 		05BE96871E4DBFD300B98A20 /* titlesPage1.json in Resources */ = {isa = PBXBuildFile; fileRef = 05BE96841E4DBFD300B98A20 /* titlesPage1.json */; };
 		05BE96881E4DBFD300B98A20 /* titlesPage2.json in Resources */ = {isa = PBXBuildFile; fileRef = 05BE96851E4DBFD300B98A20 /* titlesPage2.json */; };
 		05BE96891E4DBFD300B98A20 /* titlesPage3.json in Resources */ = {isa = PBXBuildFile; fileRef = 05BE96861E4DBFD300B98A20 /* titlesPage3.json */; };
-		05CC67801E50D1FF000F6A19 /* MyCustomFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058FFAB21E50D19E0058F029 /* MyCustomFramework.framework */; };
-		05CC67811E50D1FF000F6A19 /* MyCustomFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 058FFAB21E50D19E0058F029 /* MyCustomFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		05CC67841E50D207000F6A19 /* MyCustomFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058FFAB21E50D19E0058F029 /* MyCustomFramework.framework */; };
 		05CFA2A71E4E37EA00176703 /* CustomKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 053D22251D8AB180001DBAD4 /* CustomKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0586A5811E50E76F0008C209 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0557C1F51E4A3C1F00C819BA /* MyCustomFramework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0557C1D41E4A327800C819BA;
+			remoteInfo = MyCustomFramework;
+		};
 		058FFAB11E50D19E0058F029 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0557C1F51E4A3C1F00C819BA /* MyCustomFramework.xcodeproj */;
@@ -38,13 +45,6 @@
 			remoteGlobalIDString = 0557C1DE1E4A327900C819BA;
 			remoteInfo = MyCustomFrameworkTests;
 		};
-		05CC67821E50D1FF000F6A19 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0557C1F51E4A3C1F00C819BA /* MyCustomFramework.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0557C1D41E4A327800C819BA;
-			remoteInfo = MyCustomFramework;
-		};
 		05CFA2A81E4E37EA00176703 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 053D21E51D8AB142001DBAD4 /* Project object */;
@@ -55,6 +55,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0586A5831E50E76F0008C209 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0586A5801E50E76F0008C209 /* MyCustomFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05CFA2AA1E4E37EA00176703 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,17 +75,6 @@
 				05CFA2A71E4E37EA00176703 /* CustomKeyboard.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		05CFA2B61E4E3B6200176703 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				05CC67811E50D1FF000F6A19 /* MyCustomFramework.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -102,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05CC67801E50D1FF000F6A19 /* MyCustomFramework.framework in Frameworks */,
+				0586A57F1E50E76F0008C209 /* MyCustomFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05CC67841E50D207000F6A19 /* MyCustomFramework.framework in Frameworks */,
+				0586A5841E50E7780008C209 /* MyCustomFramework.framework in Frameworks */,
 				056E467B1DEC68580096B7F2 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,13 +191,13 @@
 				053D21EA1D8AB142001DBAD4 /* Frameworks */,
 				053D21EB1D8AB142001DBAD4 /* Resources */,
 				05CFA2AA1E4E37EA00176703 /* Embed App Extensions */,
-				05CFA2B61E4E3B6200176703 /* Embed Frameworks */,
+				0586A5831E50E76F0008C209 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				05CFA2A91E4E37EA00176703 /* PBXTargetDependency */,
-				05CC67831E50D1FF000F6A19 /* PBXTargetDependency */,
+				0586A5821E50E76F0008C209 /* PBXTargetDependency */,
 			);
 			name = HostApp;
 			productName = HostApp;
@@ -329,10 +329,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		05CC67831E50D1FF000F6A19 /* PBXTargetDependency */ = {
+		0586A5821E50E76F0008C209 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MyCustomFramework;
-			targetProxy = 05CC67821E50D1FF000F6A19 /* PBXContainerItemProxy */;
+			targetProxy = 0586A5811E50E76F0008C209 /* PBXContainerItemProxy */;
 		};
 		05CFA2A91E4E37EA00176703 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
