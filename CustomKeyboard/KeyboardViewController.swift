@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import MyCustomFramework
 
 class KeyboardViewController: UIInputViewController, UIScrollViewDelegate, NavigationBarViewDelegate, PagesViewDelegate {
     
