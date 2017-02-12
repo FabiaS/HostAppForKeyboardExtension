@@ -17,8 +17,10 @@ In the keyboard settings you can set your own values for:
 
 The "content" of the buttons is loaded via .json that must be put into the 'CustomKeyboard' folder.
 Their current format is as follows:
-`[{
+```
+[{
  "row1": [".", ".", ".", ".", ".", ".", ".", ".", "."],
  "row2": [".", ".", ".", ".", ".", ".", ".", ".", "."],
  "row3": [".", ".", ".", ".", ".", ".", ".", ".", "."],
- }`
+ }]
+ ```
