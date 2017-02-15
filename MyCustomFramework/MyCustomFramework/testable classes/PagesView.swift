@@ -1,12 +1,12 @@
 import UIKit
 
 public protocol PagesViewDelegate: class {
-    func keyPressed(sender: PagesView, button: UIButton)
+    func keyPressed(sender: PagesView, character: String)
 }
 
 public class PagesView: UIView, PageViewDelegate {
     
-    public weak var delegate: PagesViewDelegate?
+    public weak var pagesViewDelegate: PagesViewDelegate?
     private var pageViews = [PageView]()
     private let settings = KeyboardSettings()
     
@@ -18,28 +18,55 @@ public class PagesView: UIView, PageViewDelegate {
         super.init(frame: frame)
         
         setupPages()
+        addConstraints()
     }
     
     private func setupPages() {
         for number in 1...settings.maxPageCount {
             
             let pageView = PageView(frame: CGRect(), pageNumber: number)
-            pageView.delegate = self
+            pageView.pageViewDelegate = self
             
             pageViews.append(pageView)
             addSubview(pageView)
         }
     }
     
-    public func keyPressed(sender: PageView, button: UIButton) {
-        delegate?.keyPressed(sender: self, button: button)
+    public func keyPressed(sender: PageView, character: String) {
+        pagesViewDelegate?.keyPressed(sender: self, character: character)
     }
     
-    public func getPage(_ pageNumber: Int) -> PageView {
+    public func addConstraints() {
+        for number in 1...settings.maxPageCount {
+            let page = getPage(number)
+            page.pinToSuperviewTop()
+            page.pinToSuperviewBottom()
+            let mainScreenWidth = UIScreen.main.bounds.size.width
+            page.addWidthConstraint(withConstant: mainScreenWidth)
+            if number == 1 {
+                page.pinToSuperviewLeft()
+            } else {
+                let previousPage = getPage(number-1)
+                page.attachToRightOf(previousPage)
+            }
+        }
+    }
+    
+    private func getPage(_ pageNumber: Int) -> PageView {
         if pageNumber < 1 || pageNumber > settings.maxPageCount {
             fatalError("pageNumber is out of bounds")
         }
         return pageViews[pageNumber-1]
+    }
+    
+    public func addConstraintsPublic() {
+        pinToSuperviewTop(withInset: 0)
+        pinToSuperviewLeft(withInset: 0)
+        let mainScreenWidth = UIScreen.main.bounds.size.width
+        let maxScrollWidth = mainScreenWidth * CGFloat(settings.maxPageCount)
+        addWidthConstraint(withConstant: maxScrollWidth)
+        let scrollViewHeight = CGFloat(settings.keyboardHeight - settings.navBarHeight)
+        addHeightConstraint(withConstant: scrollViewHeight)
     }
     
 }

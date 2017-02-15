@@ -12,5 +12,6 @@ public struct KeyboardSettings {
     public let navigationBarTintColor = UIColor.white
     
     public init() {
+        // 
     }
 }

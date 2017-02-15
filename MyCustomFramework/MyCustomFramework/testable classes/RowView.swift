@@ -1,12 +1,12 @@
 import UIKit
 
 public protocol RowViewDelegate: class {
-    func keyPressed(sender: RowView, button: UIButton)
+    func keyPressed(sender: RowView, character: String)
 }
 
 public class RowView: UIView {
     
-    public weak var delegate: RowViewDelegate?
+    public weak var rowViewDelegate: RowViewDelegate?
     private var rowButtons = [UIButton]()
     private let settings = KeyboardSettings()
     
@@ -37,10 +37,6 @@ public class RowView: UIView {
         }
     }
     
-    public func keyPressed(_ button: UIButton) {
-        delegate?.keyPressed(sender: self, button: button)
-    }
-    
     private func createButtonWithTitle(_ title: String) -> UIButton {
         let button = UIButton(type: .system)
         button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
@@ -51,6 +47,25 @@ public class RowView: UIView {
         button.setTitle(title, for: UIControlState())
         button.tintColor = settings.keysTintColor
         return button
+    }
+    
+    public func keyPressed(_ button: UIButton) {
+        sendButtonTitleToDelegate(button)
+        animatePressedButton(button)
+    }
+    
+    private func sendButtonTitleToDelegate(_ button: UIButton) {
+        if let character = button.title(for: .normal) {
+            rowViewDelegate?.keyPressed(sender: self, character: character)
+        }
+    }
+    
+    private func animatePressedButton(_ button: UIButton) {
+        UIView.animate(withDuration: 0.2, animations: {
+            button.transform = CGAffineTransform.identity.scaledBy(x: 2.0, y: 2.0)
+        }, completion: {(_) -> Void in
+            button.transform = CGAffineTransform.identity.scaledBy(x: 1.0, y: 1.0)
+        })
     }
     
     private func addConstraints() {

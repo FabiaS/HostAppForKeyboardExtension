@@ -1,12 +1,12 @@
 import UIKit
 
 public protocol PageViewDelegate: class {
-    func keyPressed(sender: PageView, button: UIButton)
+    func keyPressed(sender: PageView, character: String)
 }
 
 public class PageView: UIView, RowViewDelegate {
     
-    public weak var delegate: PageViewDelegate?
+    public weak var pageViewDelegate: PageViewDelegate?
     private var rowViews = [RowView]()
     private let settings = KeyboardSettings()
     
@@ -34,15 +34,15 @@ public class PageView: UIView, RowViewDelegate {
             }
             
             let rowView = RowView(frame: CGRect(), rowTitles: pageTitles.getTitlesForRow(rowNumber))
-            rowView.delegate = self
+            rowView.rowViewDelegate = self
             
             rowViews.append(rowView)
             addSubview(rowView)
         }
     }
     
-    public func keyPressed(sender: RowView, button: UIButton) {
-        delegate?.keyPressed(sender: self, button: button)
+    public func keyPressed(sender: RowView, character: String) {
+        pageViewDelegate?.keyPressed(sender: self, character: character)
     }
     
     private func addConstraints() {

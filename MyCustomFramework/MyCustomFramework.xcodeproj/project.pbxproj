@@ -10,6 +10,7 @@
 		0557C1DF1E4A327900C819BA /* MyCustomFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0557C1D51E4A327900C819BA /* MyCustomFramework.framework */; };
 		0557C1E41E4A327900C819BA /* MyCustomFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557C1E31E4A327900C819BA /* MyCustomFrameworkTests.swift */; };
 		0557C1E61E4A327900C819BA /* MyCustomFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 0557C1D81E4A327900C819BA /* MyCustomFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		05580D671E5389E000FF5888 /* PagesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05580D661E5389E000FF5888 /* PagesScrollView.swift */; };
 		05BE96771E4DBA2A00B98A20 /* ButtonTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE966D1E4DBA2A00B98A20 /* ButtonTitles.swift */; };
 		05BE96781E4DBA2A00B98A20 /* KeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE966E1E4DBA2A00B98A20 /* KeyboardSettings.swift */; };
 		05BE96791E4DBA2A00B98A20 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE966F1E4DBA2A00B98A20 /* NavigationBarView.swift */; };
@@ -36,6 +37,7 @@
 		0557C1DE1E4A327900C819BA /* MyCustomFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCustomFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0557C1E31E4A327900C819BA /* MyCustomFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomFrameworkTests.swift; sourceTree = "<group>"; };
 		0557C1E51E4A327900C819BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05580D661E5389E000FF5888 /* PagesScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagesScrollView.swift; sourceTree = "<group>"; };
 		05BE966D1E4DBA2A00B98A20 /* ButtonTitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTitles.swift; sourceTree = "<group>"; };
 		05BE966E1E4DBA2A00B98A20 /* KeyboardSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardSettings.swift; sourceTree = "<group>"; };
 		05BE966F1E4DBA2A00B98A20 /* NavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				05BE966E1E4DBA2A00B98A20 /* KeyboardSettings.swift */,
 				05BE966F1E4DBA2A00B98A20 /* NavigationBarView.swift */,
+				05580D661E5389E000FF5888 /* PagesScrollView.swift */,
 				05BE96701E4DBA2A00B98A20 /* PagesView.swift */,
 				05BE96711E4DBA2A00B98A20 /* PageView.swift */,
 				05BE96721E4DBA2A00B98A20 /* RowView.swift */,
@@ -233,6 +236,7 @@
 				05BE967C1E4DBA2A00B98A20 /* RowView.swift in Sources */,
 				05BE96791E4DBA2A00B98A20 /* NavigationBarView.swift in Sources */,
 				05BE967A1E4DBA2A00B98A20 /* PagesView.swift in Sources */,
+				05580D671E5389E000FF5888 /* PagesScrollView.swift in Sources */,
 				05BE96801E4DBA2A00B98A20 /* UIViewExtension.swift in Sources */,
 				05BE96781E4DBA2A00B98A20 /* KeyboardSettings.swift in Sources */,
 			);

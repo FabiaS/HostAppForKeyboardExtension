@@ -4,8 +4,7 @@ public enum RowNumber: Int {
     case row1 = 1, row2, row3
 }
 
-// ??? could be a struct 
-public class ButtonTitles: NSObject {
+public struct ButtonTitles {
     
     private var row1Titles: [String]
     private var row2Titles: [String]
@@ -24,7 +23,7 @@ public class ButtonTitles: NSObject {
             let row1 = pageDict["row1"] as? [String],
             let row2 = pageDict["row2"] as? [String],
             let row3 = pageDict["row3"] as? [String]
-        { 
+        {
             self.row1Titles = row1
             self.row2Titles = row2
             self.row3Titles = row3
@@ -33,8 +32,6 @@ public class ButtonTitles: NSObject {
             self.row2Titles = []
             self.row3Titles = []
         }
-        
-        super.init()
     }
     
     public func getTitlesForRow(_ row: RowNumber) -> [String] {

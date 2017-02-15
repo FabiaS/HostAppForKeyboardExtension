@@ -9,7 +9,7 @@ public protocol NavigationBarViewDelegate: class {
 
 public class NavigationBarView: UIView {
     
-    public weak var delegate: NavigationBarViewDelegate?
+    public weak var navigationBarDelegate: NavigationBarViewDelegate?
     private var pageControl = UIPageControl()
     private var nextKeyboardButton: UIButton?
     private var backButton: UIButton?
@@ -74,32 +74,34 @@ public class NavigationBarView: UIView {
         return button
     }
     
-    // MARK: methods // need they be public ???
+    // MARK: methods
     
     public func nextKeyboardButtonPressed() {
-        delegate?.nextKeyboardPressed(sender: self)
-    }
-    
-    public func pagePlusOneButtonPressed() {
-        delegate?.pagePlusOnePressed(sender: self)
-    }
-    
-    public func pageMinusOneButtonPressed() {
-        delegate?.pageMinusOnePressed(sender: self)
+        navigationBarDelegate?.nextKeyboardPressed(sender: self)
     }
     
     public func deleteButtonPressed() {
-        delegate?.deletePressed(sender: self)
+        navigationBarDelegate?.deletePressed(sender: self)
     }
     
-    public func movePageControlUp(_ step: Int) {
+    public func pagePlusOneButtonPressed() {
+        movePageControlUp(1)
+        navigationBarDelegate?.pagePlusOnePressed(sender: self)
+    }
+    
+    public func pageMinusOneButtonPressed() {
+        movePageControlDown(1)
+        navigationBarDelegate?.pageMinusOnePressed(sender: self)
+    }
+    
+    private func movePageControlUp(_ step: Int) {
         let newPageNumber = pageControl.currentPage+step
         if newPageNumber < settings.maxPageCount {
             pageControl.currentPage = newPageNumber
         }
     }
     
-    public func movePageControlDown(_ step: Int) {
+    private func movePageControlDown(_ step: Int) {
         let newPageNumber = pageControl.currentPage-step
         if newPageNumber >= 0 {
             pageControl.currentPage = newPageNumber
@@ -155,4 +157,12 @@ public class NavigationBarView: UIView {
         }
     }
     
+    public func addConstraintsPublic() {
+        pinToSuperviewTop(withInset: 0)
+        pinToSuperviewLeft(withInset: 0)
+        pinToSuperviewRight(withInset: 0)
+        let navBarHeight = CGFloat(settings.navBarHeight)
+        addHeightConstraint(withConstant: navBarHeight)
+    }
+
 }
