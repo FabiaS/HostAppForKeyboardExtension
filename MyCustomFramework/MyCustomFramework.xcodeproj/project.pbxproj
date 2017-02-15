@@ -18,6 +18,7 @@
 		05BE967B1E4DBA2A00B98A20 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE96711E4DBA2A00B98A20 /* PageView.swift */; };
 		05BE967C1E4DBA2A00B98A20 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE96721E4DBA2A00B98A20 /* RowView.swift */; };
 		05BE96801E4DBA2A00B98A20 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE96761E4DBA2A00B98A20 /* UIViewExtension.swift */; };
+		05C8D5AC1E51CD3E007CFB54 /* UIViewExtensionNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C8D5AB1E51CD3E007CFB54 /* UIViewExtensionNew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		05BE96711E4DBA2A00B98A20 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		05BE96721E4DBA2A00B98A20 /* RowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		05BE96761E4DBA2A00B98A20 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		05C8D5AB1E51CD3E007CFB54 /* UIViewExtensionNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionNew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				05BE96721E4DBA2A00B98A20 /* RowView.swift */,
 				05BE966D1E4DBA2A00B98A20 /* ButtonTitles.swift */,
 				05BE96761E4DBA2A00B98A20 /* UIViewExtension.swift */,
+				05C8D5AB1E51CD3E007CFB54 /* UIViewExtensionNew.swift */,
 			);
 			path = "testable classes";
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				05BE96771E4DBA2A00B98A20 /* ButtonTitles.swift in Sources */,
 				05BE967B1E4DBA2A00B98A20 /* PageView.swift in Sources */,
 				05BE967C1E4DBA2A00B98A20 /* RowView.swift in Sources */,
+				05C8D5AC1E51CD3E007CFB54 /* UIViewExtensionNew.swift in Sources */,
 				05BE96791E4DBA2A00B98A20 /* NavigationBarView.swift in Sources */,
 				05BE967A1E4DBA2A00B98A20 /* PagesView.swift in Sources */,
 				05580D671E5389E000FF5888 /* PagesScrollView.swift in Sources */,
