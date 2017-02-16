@@ -6,20 +6,25 @@ public enum RowNumber: Int {
 
 public struct ButtonTitles {
     
-    private var row1Titles: [String]
-    private var row2Titles: [String]
-    private var row3Titles: [String]
+    private let row1Titles: [String]
+    private let row2Titles: [String]
+    private let row3Titles: [String]
     private let settings = KeyboardSettings()
     
     public init(pageNumber: Int) {
         
-        let fileTitle = "titlesPage\(pageNumber)"
-        if let path = Bundle.main.path(forResource: fileTitle, ofType: "json"),
+        var pagesDict: [String : Any] = [:]
+        if let path = Bundle.main.path(forResource: "buttonTitles", ofType: "json"),
             let data = try? NSData(contentsOfFile: path, options: .mappedIfSafe),
             let json = try? JSONSerialization.jsonObject(with: data as Data, options: []),
             let jsonArray = json as? [Any],
-            let firstObject = jsonArray.first,
-            let pageDict = firstObject as? [String : Any],
+            let jsonDict = jsonArray.first as? [String : Any]
+        {
+            pagesDict = jsonDict
+        }
+        
+        let pageKey = "page\(pageNumber)"
+        if let pageDict = pagesDict[pageKey] as? [String : Any],
             let row1 = pageDict["row1"] as? [String],
             let row2 = pageDict["row2"] as? [String],
             let row3 = pageDict["row3"] as? [String]

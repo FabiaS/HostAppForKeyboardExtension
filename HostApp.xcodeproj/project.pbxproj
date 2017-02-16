@@ -17,9 +17,7 @@
 		0586A57F1E50E76F0008C209 /* MyCustomFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058FFAB21E50D19E0058F029 /* MyCustomFramework.framework */; };
 		0586A5801E50E76F0008C209 /* MyCustomFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 058FFAB21E50D19E0058F029 /* MyCustomFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0586A5841E50E7780008C209 /* MyCustomFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058FFAB21E50D19E0058F029 /* MyCustomFramework.framework */; };
-		05BE96871E4DBFD300B98A20 /* titlesPage1.json in Resources */ = {isa = PBXBuildFile; fileRef = 05BE96841E4DBFD300B98A20 /* titlesPage1.json */; };
-		05BE96881E4DBFD300B98A20 /* titlesPage2.json in Resources */ = {isa = PBXBuildFile; fileRef = 05BE96851E4DBFD300B98A20 /* titlesPage2.json */; };
-		05BE96891E4DBFD300B98A20 /* titlesPage3.json in Resources */ = {isa = PBXBuildFile; fileRef = 05BE96861E4DBFD300B98A20 /* titlesPage3.json */; };
+		05B9C61E1E55F020002E6176 /* buttonTitles.json in Resources */ = {isa = PBXBuildFile; fileRef = 05B9C61D1E55F020002E6176 /* buttonTitles.json */; };
 		05CFA2A71E4E37EA00176703 /* CustomKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 053D22251D8AB180001DBAD4 /* CustomKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -92,9 +90,7 @@
 		053D22291D8AB180001DBAD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0557C1F51E4A3C1F00C819BA /* MyCustomFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MyCustomFramework.xcodeproj; path = MyCustomFramework/MyCustomFramework.xcodeproj; sourceTree = "<group>"; };
 		056E467A1DEC68580096B7F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		05BE96841E4DBFD300B98A20 /* titlesPage1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = titlesPage1.json; sourceTree = "<group>"; };
-		05BE96851E4DBFD300B98A20 /* titlesPage2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = titlesPage2.json; sourceTree = "<group>"; };
-		05BE96861E4DBFD300B98A20 /* titlesPage3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = titlesPage3.json; sourceTree = "<group>"; };
+		05B9C61D1E55F020002E6176 /* buttonTitles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = buttonTitles.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,10 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				053D22271D8AB180001DBAD4 /* KeyboardViewController.swift */,
-				05BE96841E4DBFD300B98A20 /* titlesPage1.json */,
-				05BE96851E4DBFD300B98A20 /* titlesPage2.json */,
-				05BE96861E4DBFD300B98A20 /* titlesPage3.json */,
 				053D22291D8AB180001DBAD4 /* Info.plist */,
+				05B9C61D1E55F020002E6176 /* buttonTitles.json */,
 			);
 			path = CustomKeyboard;
 			sourceTree = "<group>";
@@ -300,9 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05BE96881E4DBFD300B98A20 /* titlesPage2.json in Resources */,
-				05BE96891E4DBFD300B98A20 /* titlesPage3.json in Resources */,
-				05BE96871E4DBFD300B98A20 /* titlesPage1.json in Resources */,
+				05B9C61E1E55F020002E6176 /* buttonTitles.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
