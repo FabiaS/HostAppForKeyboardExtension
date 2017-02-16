@@ -22,7 +22,7 @@ public class RowView: UIView {
         super.init(frame: frame)
         
         setupButtonsWithTitles(rowTitles)
-        addConstraints()
+        addConstraintsToSubviews()
     }
     
     private func setupButtonsWithTitles(_ titles: [String]) {
@@ -68,7 +68,7 @@ public class RowView: UIView {
         })
     }
     
-    private func addConstraints() {
+    private func addConstraintsToSubviews() {
         for (index, button) in rowButtons.enumerated() {
             button.pinToSuperviewTop()
             button.pinToSuperviewBottom()

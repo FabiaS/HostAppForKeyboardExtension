@@ -23,7 +23,7 @@ public class PageView: UIView, RowViewDelegate {
         
         let pageTitles = ButtonTitles(pageNumber: pageNumber)
         setupRowsForPage(pageTitles)
-        addConstraints()
+        addConstraintsToSubviews()
     }
     
     private func setupRowsForPage(_ pageTitles: ButtonTitles) {
@@ -45,7 +45,7 @@ public class PageView: UIView, RowViewDelegate {
         pageViewDelegate?.keyPressed(sender: self, character: character)
     }
     
-    private func addConstraints() {
+    private func addConstraintsToSubviews() {
         for (index, rowView) in rowViews.enumerated() {
             rowView.pinToSuperviewLeft(withInset: 0)
             rowView.pinToSuperviewRight(withInset: 0)

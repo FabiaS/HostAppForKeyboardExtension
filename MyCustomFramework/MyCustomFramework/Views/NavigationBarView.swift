@@ -27,7 +27,7 @@ public class NavigationBarView: UIView {
         backgroundColor = settings.navigationBarBackgroundColor
         setupPageControl()
         setupButtons()
-        addConstraints()
+        addConstraintsToSubviews()
     }
     
     private func setupPageControl() {
@@ -118,7 +118,7 @@ public class NavigationBarView: UIView {
     
     // MARK: constraints
     
-    private func addConstraints() {
+    private func addConstraintsToSubviews() {
         pageControl.pinToSuperviewTop(withInset: 0)
         pageControl.pinToSuperviewLeft(withInset: 0)
         pageControl.pinToSuperviewRight(withInset: 0)

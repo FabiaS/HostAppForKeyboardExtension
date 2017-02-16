@@ -18,7 +18,7 @@ public class PagesView: UIView, PageViewDelegate {
         super.init(frame: frame)
         
         setupPages()
-        addConstraints()
+        addConstraintsToSubviews()
     }
     
     private func setupPages() {
@@ -36,7 +36,7 @@ public class PagesView: UIView, PageViewDelegate {
         pagesViewDelegate?.keyPressed(sender: self, character: character)
     }
     
-    public func addConstraints() {
+    public func addConstraintsToSubviews() {
         for number in 1...settings.maxPageCount {
             let page = getPage(number)
             page.pinToSuperviewTop()
