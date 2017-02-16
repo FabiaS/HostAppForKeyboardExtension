@@ -157,7 +157,7 @@ public class NavigationBarView: UIView {
         }
     }
     
-    public func addConstraintsPublic() {
+    public func addConstraintsToSuperview() {
         pinToSuperviewTop(withInset: 0)
         pinToSuperviewLeft(withInset: 0)
         pinToSuperviewRight(withInset: 0)

@@ -54,7 +54,7 @@ public class PagesScrollView: UIScrollView, UIScrollViewDelegate {
         }
     }
     
-    public func addConstraintsPublic() {
+    public func addConstraintsToSuperview() {
         pinToSuperviewBottom(withInset: 0)
         pinToSuperviewLeft(withInset: 0)
         pinToSuperviewRight(withInset: 0)

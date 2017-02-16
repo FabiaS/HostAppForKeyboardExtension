@@ -42,11 +42,20 @@ class KeyboardViewController: UIInputViewController, NavigationBarViewDelegate, 
             horizontalScrollView.addSubview(allPagesView)
             view.addSubview(horizontalScrollView)
             view.addSubview(navigationBarView)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let horizontalScrollView = horizontalScrollView,
+            let allPagesView = allPagesView,
+            let navigationBarView = navigationBarView {
             
-            // ???: this needs to be done after adding the views, otherwise superView is nil
-            horizontalScrollView.addConstraintsPublic()
-            allPagesView.addConstraintsPublic()
-            navigationBarView.addConstraintsPublic()
+            horizontalScrollView.addConstraintsToSuperview()
+            allPagesView.addConstraintsToSuperview()
+            navigationBarView.addConstraintsToSuperview()
+            // This cannot be done when setting up the views because their superviews are nil until they are added to one.
         }
     }
     

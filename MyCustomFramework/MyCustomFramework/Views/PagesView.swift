@@ -59,7 +59,7 @@ public class PagesView: UIView, PageViewDelegate {
         return pageViews[pageNumber-1]
     }
     
-    public func addConstraintsPublic() {
+    public func addConstraintsToSuperview() {
         pinToSuperviewTop(withInset: 0)
         pinToSuperviewLeft(withInset: 0)
         let mainScreenWidth = UIScreen.main.bounds.size.width
