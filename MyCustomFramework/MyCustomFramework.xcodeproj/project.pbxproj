@@ -10,15 +10,15 @@
 		0557C1DF1E4A327900C819BA /* MyCustomFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0557C1D51E4A327900C819BA /* MyCustomFramework.framework */; };
 		0557C1E41E4A327900C819BA /* MyCustomFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557C1E31E4A327900C819BA /* MyCustomFrameworkTests.swift */; };
 		0557C1E61E4A327900C819BA /* MyCustomFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 0557C1D81E4A327900C819BA /* MyCustomFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05580D671E5389E000FF5888 /* PagesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05580D661E5389E000FF5888 /* PagesScrollView.swift */; };
-		05BE96771E4DBA2A00B98A20 /* ButtonTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE966D1E4DBA2A00B98A20 /* ButtonTitles.swift */; };
-		05BE96781E4DBA2A00B98A20 /* KeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE966E1E4DBA2A00B98A20 /* KeyboardSettings.swift */; };
-		05BE96791E4DBA2A00B98A20 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE966F1E4DBA2A00B98A20 /* NavigationBarView.swift */; };
-		05BE967A1E4DBA2A00B98A20 /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE96701E4DBA2A00B98A20 /* PagesView.swift */; };
-		05BE967B1E4DBA2A00B98A20 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE96711E4DBA2A00B98A20 /* PageView.swift */; };
-		05BE967C1E4DBA2A00B98A20 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE96721E4DBA2A00B98A20 /* RowView.swift */; };
-		05BE96801E4DBA2A00B98A20 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE96761E4DBA2A00B98A20 /* UIViewExtension.swift */; };
-		05C8D5AC1E51CD3E007CFB54 /* UIViewExtensionNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C8D5AB1E51CD3E007CFB54 /* UIViewExtensionNew.swift */; };
+		05E20A861E55AE1A009566B6 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A7F1E55AE1A009566B6 /* NavigationBarView.swift */; };
+		05E20A871E55AE1A009566B6 /* PagesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A801E55AE1A009566B6 /* PagesScrollView.swift */; };
+		05E20A881E55AE1A009566B6 /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A811E55AE1A009566B6 /* PagesView.swift */; };
+		05E20A891E55AE1A009566B6 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A821E55AE1A009566B6 /* PageView.swift */; };
+		05E20A8A1E55AE1A009566B6 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A831E55AE1A009566B6 /* RowView.swift */; };
+		05E20A8B1E55AE1A009566B6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A841E55AE1A009566B6 /* UIViewExtension.swift */; };
+		05E20A8C1E55AE1A009566B6 /* UIViewExtensionNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A851E55AE1A009566B6 /* UIViewExtensionNew.swift */; };
+		05E20A901E55AE1F009566B6 /* ButtonTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A8E1E55AE1F009566B6 /* ButtonTitles.swift */; };
+		05E20A911E55AE1F009566B6 /* KeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A8F1E55AE1F009566B6 /* KeyboardSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,15 +38,15 @@
 		0557C1DE1E4A327900C819BA /* MyCustomFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCustomFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0557C1E31E4A327900C819BA /* MyCustomFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomFrameworkTests.swift; sourceTree = "<group>"; };
 		0557C1E51E4A327900C819BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05580D661E5389E000FF5888 /* PagesScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagesScrollView.swift; sourceTree = "<group>"; };
-		05BE966D1E4DBA2A00B98A20 /* ButtonTitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTitles.swift; sourceTree = "<group>"; };
-		05BE966E1E4DBA2A00B98A20 /* KeyboardSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardSettings.swift; sourceTree = "<group>"; };
-		05BE966F1E4DBA2A00B98A20 /* NavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
-		05BE96701E4DBA2A00B98A20 /* PagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
-		05BE96711E4DBA2A00B98A20 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
-		05BE96721E4DBA2A00B98A20 /* RowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
-		05BE96761E4DBA2A00B98A20 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		05C8D5AB1E51CD3E007CFB54 /* UIViewExtensionNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionNew.swift; sourceTree = "<group>"; };
+		05E20A7F1E55AE1A009566B6 /* NavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		05E20A801E55AE1A009566B6 /* PagesScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagesScrollView.swift; sourceTree = "<group>"; };
+		05E20A811E55AE1A009566B6 /* PagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
+		05E20A821E55AE1A009566B6 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		05E20A831E55AE1A009566B6 /* RowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		05E20A841E55AE1A009566B6 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		05E20A851E55AE1A009566B6 /* UIViewExtensionNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionNew.swift; sourceTree = "<group>"; };
+		05E20A8E1E55AE1F009566B6 /* ButtonTitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTitles.swift; sourceTree = "<group>"; };
+		05E20A8F1E55AE1F009566B6 /* KeyboardSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				0557C1D81E4A327900C819BA /* MyCustomFramework.h */,
-				0557C2321E4C72C600C819BA /* testable classes */,
+				05E20A8D1E55AE1F009566B6 /* Data */,
+				05E20A7E1E55AE1A009566B6 /* Views */,
 				0557C1D91E4A327900C819BA /* Info.plist */,
 			);
 			path = MyCustomFramework;
@@ -105,20 +106,27 @@
 			path = MyCustomFrameworkTests;
 			sourceTree = "<group>";
 		};
-		0557C2321E4C72C600C819BA /* testable classes */ = {
+		05E20A7E1E55AE1A009566B6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				05BE966E1E4DBA2A00B98A20 /* KeyboardSettings.swift */,
-				05BE966F1E4DBA2A00B98A20 /* NavigationBarView.swift */,
-				05580D661E5389E000FF5888 /* PagesScrollView.swift */,
-				05BE96701E4DBA2A00B98A20 /* PagesView.swift */,
-				05BE96711E4DBA2A00B98A20 /* PageView.swift */,
-				05BE96721E4DBA2A00B98A20 /* RowView.swift */,
-				05BE966D1E4DBA2A00B98A20 /* ButtonTitles.swift */,
-				05BE96761E4DBA2A00B98A20 /* UIViewExtension.swift */,
-				05C8D5AB1E51CD3E007CFB54 /* UIViewExtensionNew.swift */,
+				05E20A7F1E55AE1A009566B6 /* NavigationBarView.swift */,
+				05E20A801E55AE1A009566B6 /* PagesScrollView.swift */,
+				05E20A811E55AE1A009566B6 /* PagesView.swift */,
+				05E20A821E55AE1A009566B6 /* PageView.swift */,
+				05E20A831E55AE1A009566B6 /* RowView.swift */,
+				05E20A841E55AE1A009566B6 /* UIViewExtension.swift */,
+				05E20A851E55AE1A009566B6 /* UIViewExtensionNew.swift */,
 			);
-			path = "testable classes";
+			path = Views;
+			sourceTree = "<group>";
+		};
+		05E20A8D1E55AE1F009566B6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				05E20A8E1E55AE1F009566B6 /* ButtonTitles.swift */,
+				05E20A8F1E55AE1F009566B6 /* KeyboardSettings.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,15 +242,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05BE96771E4DBA2A00B98A20 /* ButtonTitles.swift in Sources */,
-				05BE967B1E4DBA2A00B98A20 /* PageView.swift in Sources */,
-				05BE967C1E4DBA2A00B98A20 /* RowView.swift in Sources */,
-				05C8D5AC1E51CD3E007CFB54 /* UIViewExtensionNew.swift in Sources */,
-				05BE96791E4DBA2A00B98A20 /* NavigationBarView.swift in Sources */,
-				05BE967A1E4DBA2A00B98A20 /* PagesView.swift in Sources */,
-				05580D671E5389E000FF5888 /* PagesScrollView.swift in Sources */,
-				05BE96801E4DBA2A00B98A20 /* UIViewExtension.swift in Sources */,
-				05BE96781E4DBA2A00B98A20 /* KeyboardSettings.swift in Sources */,
+				05E20A8B1E55AE1A009566B6 /* UIViewExtension.swift in Sources */,
+				05E20A8C1E55AE1A009566B6 /* UIViewExtensionNew.swift in Sources */,
+				05E20A901E55AE1F009566B6 /* ButtonTitles.swift in Sources */,
+				05E20A891E55AE1A009566B6 /* PageView.swift in Sources */,
+				05E20A861E55AE1A009566B6 /* NavigationBarView.swift in Sources */,
+				05E20A881E55AE1A009566B6 /* PagesView.swift in Sources */,
+				05E20A8A1E55AE1A009566B6 /* RowView.swift in Sources */,
+				05E20A871E55AE1A009566B6 /* PagesScrollView.swift in Sources */,
+				05E20A911E55AE1F009566B6 /* KeyboardSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
