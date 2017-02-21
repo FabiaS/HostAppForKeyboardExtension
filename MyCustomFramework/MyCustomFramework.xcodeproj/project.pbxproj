@@ -15,8 +15,7 @@
 		05E20A881E55AE1A009566B6 /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A811E55AE1A009566B6 /* PagesView.swift */; };
 		05E20A891E55AE1A009566B6 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A821E55AE1A009566B6 /* PageView.swift */; };
 		05E20A8A1E55AE1A009566B6 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A831E55AE1A009566B6 /* RowView.swift */; };
-		05E20A8B1E55AE1A009566B6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A841E55AE1A009566B6 /* UIViewExtension.swift */; };
-		05E20A8C1E55AE1A009566B6 /* UIViewExtensionNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A851E55AE1A009566B6 /* UIViewExtensionNew.swift */; };
+		05E20A8C1E55AE1A009566B6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A851E55AE1A009566B6 /* UIViewExtension.swift */; };
 		05E20A901E55AE1F009566B6 /* ButtonTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A8E1E55AE1F009566B6 /* ButtonTitles.swift */; };
 		05E20A911E55AE1F009566B6 /* KeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E20A8F1E55AE1F009566B6 /* KeyboardSettings.swift */; };
 /* End PBXBuildFile section */
@@ -43,8 +42,7 @@
 		05E20A811E55AE1A009566B6 /* PagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
 		05E20A821E55AE1A009566B6 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		05E20A831E55AE1A009566B6 /* RowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
-		05E20A841E55AE1A009566B6 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		05E20A851E55AE1A009566B6 /* UIViewExtensionNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionNew.swift; sourceTree = "<group>"; };
+		05E20A851E55AE1A009566B6 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		05E20A8E1E55AE1F009566B6 /* ButtonTitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTitles.swift; sourceTree = "<group>"; };
 		05E20A8F1E55AE1F009566B6 /* KeyboardSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,8 +112,7 @@
 				05E20A811E55AE1A009566B6 /* PagesView.swift */,
 				05E20A821E55AE1A009566B6 /* PageView.swift */,
 				05E20A831E55AE1A009566B6 /* RowView.swift */,
-				05E20A841E55AE1A009566B6 /* UIViewExtension.swift */,
-				05E20A851E55AE1A009566B6 /* UIViewExtensionNew.swift */,
+				05E20A851E55AE1A009566B6 /* UIViewExtension.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,8 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05E20A8B1E55AE1A009566B6 /* UIViewExtension.swift in Sources */,
-				05E20A8C1E55AE1A009566B6 /* UIViewExtensionNew.swift in Sources */,
+				05E20A8C1E55AE1A009566B6 /* UIViewExtension.swift in Sources */,
 				05E20A901E55AE1F009566B6 /* ButtonTitles.swift in Sources */,
 				05E20A891E55AE1A009566B6 /* PageView.swift in Sources */,
 				05E20A861E55AE1A009566B6 /* NavigationBarView.swift in Sources */,

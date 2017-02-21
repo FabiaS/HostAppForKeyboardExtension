@@ -18,9 +18,9 @@ public struct ButtonTitles {
             let data = try? NSData(contentsOfFile: path, options: .mappedIfSafe),
             let json = try? JSONSerialization.jsonObject(with: data as Data, options: []),
             let jsonArray = json as? [Any],
-            let jsonDict = jsonArray.first as? [String : Any]
+            let innerJsonDict = jsonArray.first as? [String : Any]
         {
-            pagesDict = jsonDict
+            pagesDict = innerJsonDict
         }
         
         let pageKey = "page\(pageNumber)"

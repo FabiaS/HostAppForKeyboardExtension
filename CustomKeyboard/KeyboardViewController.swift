@@ -86,11 +86,8 @@ class KeyboardViewController: UIInputViewController, NavigationBarViewDelegate, 
         horizontalScrollView?.moveScrollViewOneDown()
     }
     
-    func scrollViewDidScroll(sender: PagesScrollView,
-                             scrollViewContentOffset: CGPoint,
-                             scrollViewPageSize: CGSize) {
-        navigationBarView?.updatePageControlWith(scrollViewContentOffset: scrollViewContentOffset,
-                                                 scrollViewPageSize: scrollViewPageSize)
+    func scrollViewDidScroll(sender: PagesScrollView, scrollViewContentOffset: CGPoint, scrollViewPageSize: CGSize) {
+        navigationBarView?.updatePageControlWith(scrollViewContentOffset: scrollViewContentOffset, scrollViewPageSize: scrollViewPageSize)
     }
     
 }

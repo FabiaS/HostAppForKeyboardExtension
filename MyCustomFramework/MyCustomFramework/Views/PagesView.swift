@@ -17,6 +17,8 @@ public class PagesView: UIView, PageViewDelegate {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
+        translatesAutoresizingMaskIntoConstraints = false
+        
         setupPages()
         addConstraintsToSubviews()
     }
@@ -38,16 +40,17 @@ public class PagesView: UIView, PageViewDelegate {
     
     public func addConstraintsToSubviews() {
         for number in 1...settings.maxPageCount {
+            
             let page = getPage(number)
-            page.pinToSuperviewTop()
-            page.pinToSuperviewBottom()
-            let mainScreenWidth = UIScreen.main.bounds.size.width
-            page.addWidthConstraint(withConstant: mainScreenWidth)
+            page.constrainToSuperview(edges: [.top, .bottom])
+            
+            page.constrain(width: UIScreen.mainScreenWidth) // ???
+            
             if number == 1 {
-                page.pinToSuperviewLeft()
+                page.constrainToSuperview(.left)
             } else {
                 let previousPage = getPage(number-1)
-                page.attachToRightOf(previousPage)
+                page.constrain(.left, to: previousPage, .right)
             }
         }
     }
@@ -60,13 +63,12 @@ public class PagesView: UIView, PageViewDelegate {
     }
     
     public func addConstraintsToSuperview() {
-        pinToSuperviewTop(withInset: 0)
-        pinToSuperviewLeft(withInset: 0)
-        let mainScreenWidth = UIScreen.main.bounds.size.width
-        let maxScrollWidth = mainScreenWidth * CGFloat(settings.maxPageCount)
-        addWidthConstraint(withConstant: maxScrollWidth)
-        let scrollViewHeight = CGFloat(settings.keyboardHeight - settings.navBarHeight)
-        addHeightConstraint(withConstant: scrollViewHeight)
+        constrainToSuperview(edges: [.left, .top])
+        
+        // ???
+        let maxScrollWidth = UIScreen.mainScreenWidth * CGFloat(settings.maxPageCount)
+        constrain(width: maxScrollWidth-8)
+        constrain(height: settings.keyboardHeight-2)
     }
     
 }

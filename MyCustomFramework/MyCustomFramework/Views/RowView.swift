@@ -21,6 +21,8 @@ public class RowView: UIView {
     public init(frame: CGRect, rowTitles: [String]) {
         super.init(frame: frame)
         
+        translatesAutoresizingMaskIntoConstraints = false
+        
         setupButtonsWithTitles(rowTitles)
         addConstraintsToSubviews()
     }
@@ -70,29 +72,18 @@ public class RowView: UIView {
     
     private func addConstraintsToSubviews() {
         for (index, button) in rowButtons.enumerated() {
-            button.pinToSuperviewTop()
-            button.pinToSuperviewBottom()
+            
+            button.constrainToSuperview(edges: [.top, .bottom])
+            
+            let maxNumberOfButtons = rowButtons.count
+            let buttonWidth = UIScreen.mainScreenWidth / CGFloat(maxNumberOfButtons)
+            button.constrain(width: buttonWidth) // ???
             
             if index == 0 {
-                button.pinToSuperviewLeft()
-                
-                let mainScreenWidth = UIScreen.main.bounds.size.width
-                let buttonWidth = mainScreenWidth / CGFloat(rowButtons.count)
-                button.addWidthConstraint(withConstant: buttonWidth)
-                
-            } else if index == rowButtons.count - 1 {
-                let previousButton = rowButtons[index-1]
-                button.attachToRightOf(previousButton)
-                
-                let firstButton = rowButtons[0]
-                button.equalWidthTo(firstButton)
-                
+                button.constrainToSuperview(.left)
             } else {
                 let previousButton = rowButtons[index-1]
-                button.attachToRightOf(previousButton)
-                
-                let firstButton = rowButtons[0]
-                button.equalWidthTo(firstButton)
+                button.constrain(.left, to: previousButton, .right)
             }
         }
     }

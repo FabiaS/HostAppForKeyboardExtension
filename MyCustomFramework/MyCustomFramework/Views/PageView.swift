@@ -21,6 +21,8 @@ public class PageView: UIView, RowViewDelegate {
     public init(frame: CGRect, pageNumber: Int) {
         super.init(frame: frame)
         
+        translatesAutoresizingMaskIntoConstraints = false
+        
         let pageTitles = ButtonTitles(pageNumber: pageNumber)
         setupRowsForPage(pageTitles)
         addConstraintsToSubviews()
@@ -46,21 +48,20 @@ public class PageView: UIView, RowViewDelegate {
     }
     
     private func addConstraintsToSubviews() {
+        
         for (index, rowView) in rowViews.enumerated() {
-            rowView.pinToSuperviewLeft(withInset: 0)
-            rowView.pinToSuperviewRight(withInset: 0)
             
-            if index == 0 {
-                rowView.pinToSuperviewTop(withInset: 0)
-                
-                let scrollViewHeight = CGFloat(settings.keyboardHeight - settings.navBarHeight)
-                let rowHeight = scrollViewHeight / CGFloat(settings.maxRowCount)
-                rowView.addHeightConstraint(withConstant: rowHeight)
-                
+            rowView.constrainToSuperview(edges: [.left, .right])
+            
+            let maxNumberOfRows = settings.maxRowCount
+            let rowHeight = settings.keyboardHeight / CGFloat(maxNumberOfRows)
+            rowView.constrain(height: rowHeight) // ??? 
+            
+            if index == maxNumberOfRows-1 {
+                rowView.constrainToSuperview(.bottom)
             } else {
-                let previousRow = rowViews[index-1]
-                rowView.attachToBottomOf(previousRow)
-                rowView.equalHeightTo(previousRow)
+                let nextRow = rowViews[index+1]
+                rowView.constrain(.bottom, to: nextRow, .top)
             }
         }
     }

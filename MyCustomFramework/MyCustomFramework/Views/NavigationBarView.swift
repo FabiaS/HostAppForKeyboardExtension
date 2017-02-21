@@ -24,6 +24,8 @@ public class NavigationBarView: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
+        translatesAutoresizingMaskIntoConstraints = false
+        
         backgroundColor = settings.navigationBarBackgroundColor
         setupPageControl()
         setupButtons()
@@ -119,50 +121,50 @@ public class NavigationBarView: UIView {
     // MARK: constraints
     
     private func addConstraintsToSubviews() {
-        pageControl.pinToSuperviewTop(withInset: 0)
-        pageControl.pinToSuperviewLeft(withInset: 0)
-        pageControl.pinToSuperviewRight(withInset: 0)
-        pageControl.addHeightConstraint(withConstant: 20)
         
-        guard let nextKeyboardButton = nextKeyboardButton, let backButton = backButton, let forwardButton = forwardButton, let deleteButton = deleteButton else {
+        pageControl.constrainToSuperview(edges: [.left, .top, .right])
+        pageControl.constrain(height: 20)
+        
+        guard let nextKeyboardButton = nextKeyboardButton,
+                let backButton = backButton,
+                let forwardButton = forwardButton,
+                let deleteButton = deleteButton else {
             fatalError("Could not find buttons")
         }
-        let buttons = [nextKeyboardButton, backButton, forwardButton, deleteButton]
         
+        let buttons = [nextKeyboardButton, backButton, forwardButton, deleteButton]
         for (index, button) in buttons.enumerated() {
-            button.pinToSuperviewTop()
-            button.pinToSuperviewBottom()
+            
+            button.constrainToSuperview(edges: [.top, .bottom])
+            
+            let maxNumberOfButtons = buttons.count
+            let buttonWidth = UIScreen.mainScreenWidth / CGFloat(maxNumberOfButtons)
+            button.constrain(width: buttonWidth)
             
             if index == 0 {
-                button.pinToSuperviewLeft()
                 
-                let mainScreenWidth = UIScreen.main.bounds.size.width
-                let buttonWidth = mainScreenWidth / CGFloat(buttons.count)
-                button.addWidthConstraint(withConstant: buttonWidth)
+                button.constrainToSuperview(.left)
                 
-            } else if index == buttons.count - 1 {
+            } else if index == maxNumberOfButtons-1 {
+                
+                button.constrainToSuperview(.right)
+                
+            } else if index <= (maxNumberOfButtons-1)/2 {
+                
                 let previousButton = buttons[index-1]
-                button.attachToRightOf(previousButton)
-                
-                let firstButton = buttons[0]
-                button.equalWidthTo(firstButton)
+                button.constrain(.left, to: previousButton, .right)
                 
             } else {
-                let previousButton = buttons[index-1]
-                button.attachToRightOf(previousButton)
                 
-                let firstButton = buttons[0]
-                button.equalWidthTo(firstButton)
+                let nextButton = buttons[index+1]
+                button.constrain(.right, to: nextButton, .left)
             }
         }
     }
     
     public func addConstraintsToSuperview() {
-        pinToSuperviewTop(withInset: 0)
-        pinToSuperviewLeft(withInset: 0)
-        pinToSuperviewRight(withInset: 0)
-        let navBarHeight = CGFloat(settings.navBarHeight)
-        addHeightConstraint(withConstant: navBarHeight)
+        constrainToSuperview(edges: [.left, .bottom, .right])
+        constrain(height: CGFloat(settings.navBarHeight))
     }
 
 }
