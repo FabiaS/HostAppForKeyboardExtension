@@ -6,19 +6,27 @@ public protocol PagesScrollViewDelegate: class {
 
 public class PagesScrollView: UIScrollView, UIScrollViewDelegate {
     
-    private let settings = KeyboardSettings()
     public weak var scrollViewDelegate: PagesScrollViewDelegate?
+    private let settings = KeyboardSettings()
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented - use init(frame:)")
+        fatalError("init(coder:) has not been implemented - use init()")
     }
     
     public override init(frame: CGRect) {
-        super.init(frame: frame)
+        fatalError("init(frame:) has not been implemented - use init()")
+    }
+    
+    public init() {
+        super.init(frame: CGRect())
         
         translatesAutoresizingMaskIntoConstraints = false
         
         setupPagesScrollView()
+    }
+    
+    public override func didMoveToSuperview() {
+        addConstraints()
     }
     
     private func setupPagesScrollView() {
@@ -27,8 +35,15 @@ public class PagesScrollView: UIScrollView, UIScrollViewDelegate {
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         
+        let keyboardHeight: CGFloat // ???
+        if UIDevice.current.orientation.isLandscape {
+            keyboardHeight = UIScreen.mainScreenHeight/2.0
+        } else {
+            keyboardHeight = UIScreen.mainScreenHeight/2.5
+        }
+        
         let maxScrollWidth = UIScreen.mainScreenWidth * CGFloat(settings.maxPageCount)
-        contentSize = CGSize(width: maxScrollWidth, height: settings.keyboardHeight) // ???
+        contentSize = CGSize(width: maxScrollWidth, height: keyboardHeight-settings.navBarHeight) // ???
     }
     
     public func moveScrollViewOneUp() {
@@ -54,17 +69,24 @@ public class PagesScrollView: UIScrollView, UIScrollViewDelegate {
         }
     }
     
-    public func addConstraintsToSuperview() {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollViewDelegate?.scrollViewDidScroll(sender: self, scrollViewContentOffset: scrollView.contentOffset, scrollViewPageSize: scrollView.frame.size)
+    }
+    
+    private func addConstraints() {
         constrainToSuperview(.left)
         constrainToSuperview(.top)
         
+        let keyboardHeight: CGFloat // ???
+        if UIDevice.current.orientation.isLandscape {
+            keyboardHeight = UIScreen.mainScreenHeight/2.0
+        } else {
+            keyboardHeight = UIScreen.mainScreenHeight/2.5
+        }
+        
         // ???
         constrain(width: UIScreen.mainScreenWidth)
-        constrain(height: settings.keyboardHeight)
-    }
-    
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        scrollViewDelegate?.scrollViewDidScroll(sender: self, scrollViewContentOffset: scrollView.contentOffset, scrollViewPageSize: scrollView.frame.size)
+        constrain(height: keyboardHeight-settings.navBarHeight)
     }
     
 }

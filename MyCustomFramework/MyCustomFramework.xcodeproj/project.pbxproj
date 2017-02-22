@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		051312421E5E00CE0091A96E /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051312411E5E00CE0091A96E /* UIScreenExtension.swift */; };
+		051312441E5E0B5B0091A96E /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051312431E5E0B5B0091A96E /* ButtonView.swift */; };
+		051312461E5E17590091A96E /* NavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051312451E5E17590091A96E /* NavigationButtonView.swift */; };
 		0557C1DF1E4A327900C819BA /* MyCustomFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0557C1D51E4A327900C819BA /* MyCustomFramework.framework */; };
 		0557C1E41E4A327900C819BA /* MyCustomFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557C1E31E4A327900C819BA /* MyCustomFrameworkTests.swift */; };
 		0557C1E61E4A327900C819BA /* MyCustomFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 0557C1D81E4A327900C819BA /* MyCustomFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		051312411E5E00CE0091A96E /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
+		051312431E5E0B5B0091A96E /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		051312451E5E17590091A96E /* NavigationButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationButtonView.swift; sourceTree = "<group>"; };
 		0557C1D51E4A327900C819BA /* MyCustomFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyCustomFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0557C1D81E4A327900C819BA /* MyCustomFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCustomFramework.h; sourceTree = "<group>"; };
 		0557C1D91E4A327900C819BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,7 +118,10 @@
 				05E20A811E55AE1A009566B6 /* PagesView.swift */,
 				05E20A821E55AE1A009566B6 /* PageView.swift */,
 				05E20A831E55AE1A009566B6 /* RowView.swift */,
+				051312431E5E0B5B0091A96E /* ButtonView.swift */,
+				051312451E5E17590091A96E /* NavigationButtonView.swift */,
 				05E20A851E55AE1A009566B6 /* UIViewExtension.swift */,
+				051312411E5E00CE0091A96E /* UIScreenExtension.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,11 +249,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				05E20A8C1E55AE1A009566B6 /* UIViewExtension.swift in Sources */,
+				051312421E5E00CE0091A96E /* UIScreenExtension.swift in Sources */,
+				051312441E5E0B5B0091A96E /* ButtonView.swift in Sources */,
 				05E20A901E55AE1F009566B6 /* ButtonTitles.swift in Sources */,
 				05E20A891E55AE1A009566B6 /* PageView.swift in Sources */,
 				05E20A861E55AE1A009566B6 /* NavigationBarView.swift in Sources */,
 				05E20A881E55AE1A009566B6 /* PagesView.swift in Sources */,
 				05E20A8A1E55AE1A009566B6 /* RowView.swift in Sources */,
+				051312461E5E17590091A96E /* NavigationButtonView.swift in Sources */,
 				05E20A871E55AE1A009566B6 /* PagesScrollView.swift in Sources */,
 				05E20A911E55AE1F009566B6 /* KeyboardSettings.swift in Sources */,
 			);

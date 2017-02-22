@@ -20,19 +20,19 @@ class KeyboardViewController: UIInputViewController, NavigationBarViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setup()
+        view.backgroundColor = settings.keysBackgroundColor
+        setupViews()
     }
     
-    private func setup() {
-        view.backgroundColor = settings.keysBackgroundColor
+    private func setupViews() {
 
-        horizontalScrollView = PagesScrollView(frame: CGRect())
+        horizontalScrollView = PagesScrollView()
         horizontalScrollView?.scrollViewDelegate = self
         
-        allPagesView = PagesView(frame: CGRect())
+        allPagesView = PagesView()
         allPagesView?.pagesViewDelegate = self
         
-        navigationBarView = NavigationBarView(frame: CGRect())
+        navigationBarView = NavigationBarView()
         navigationBarView?.navigationBarDelegate = self
         
         if let horizontalScrollView = horizontalScrollView,
@@ -45,18 +45,9 @@ class KeyboardViewController: UIInputViewController, NavigationBarViewDelegate, 
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if let horizontalScrollView = horizontalScrollView,
-            let allPagesView = allPagesView,
-            let navigationBarView = navigationBarView {
-            
-            horizontalScrollView.addConstraintsToSuperview()
-            allPagesView.addConstraintsToSuperview()
-            navigationBarView.addConstraintsToSuperview()
-            // This cannot be done when setting up the views because their superviews are nil until they are added to one.
-        }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        // ???
     }
     
     // MARK: delegate methods

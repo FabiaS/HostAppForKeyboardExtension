@@ -7,26 +7,34 @@ public protocol PagesViewDelegate: class {
 public class PagesView: UIView, PageViewDelegate {
     
     public weak var pagesViewDelegate: PagesViewDelegate?
-    private var pageViews = [PageView]()
     private let settings = KeyboardSettings()
+    private var pageViews = [PageView]()
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented - use init(frame:)")
+        fatalError("init(coder:) has not been implemented - use init()")
     }
     
     public override init(frame: CGRect) {
-        super.init(frame: frame)
+        fatalError("init(frame:) has not been implemented - use init()")
+    }
+    
+    public init() {
+        super.init(frame: CGRect())
         
         translatesAutoresizingMaskIntoConstraints = false
         
         setupPages()
+    }
+    
+    public override func didMoveToSuperview() {
+        addConstraints()
         addConstraintsToSubviews()
     }
     
     private func setupPages() {
         for number in 1...settings.maxPageCount {
             
-            let pageView = PageView(frame: CGRect(), pageNumber: number)
+            let pageView = PageView(pageNumber: number)
             pageView.pageViewDelegate = self
             
             pageViews.append(pageView)
@@ -38,7 +46,23 @@ public class PagesView: UIView, PageViewDelegate {
         pagesViewDelegate?.keyPressed(sender: self, character: character)
     }
     
-    public func addConstraintsToSubviews() {
+    private func addConstraints() {
+        constrainToSuperview(edges: [.left, .top])
+        
+        let keyboardHeight: CGFloat // ???
+        if UIDevice.current.orientation.isLandscape {
+            keyboardHeight = UIScreen.mainScreenHeight/2.0
+        } else {
+            keyboardHeight = UIScreen.mainScreenHeight/2.5
+        }
+        
+        // ???
+        let maxScrollWidth = UIScreen.mainScreenWidth * CGFloat(settings.maxPageCount)
+        constrain(width: maxScrollWidth-8)
+        constrain(height: keyboardHeight-settings.navBarHeight-2)
+    }
+    
+    private func addConstraintsToSubviews() {
         for number in 1...settings.maxPageCount {
             
             let page = getPage(number)
@@ -60,15 +84,6 @@ public class PagesView: UIView, PageViewDelegate {
             fatalError("pageNumber is out of bounds")
         }
         return pageViews[pageNumber-1]
-    }
-    
-    public func addConstraintsToSuperview() {
-        constrainToSuperview(edges: [.left, .top])
-        
-        // ???
-        let maxScrollWidth = UIScreen.mainScreenWidth * CGFloat(settings.maxPageCount)
-        constrain(width: maxScrollWidth-8)
-        constrain(height: settings.keyboardHeight-2)
     }
     
 }

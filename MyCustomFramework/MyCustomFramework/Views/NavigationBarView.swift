@@ -7,28 +7,36 @@ public protocol NavigationBarViewDelegate: class {
     func deletePressed(sender: NavigationBarView)
 }
 
-public class NavigationBarView: UIView {
+public class NavigationBarView: UIView, NavigationButtonViewDelegate {
     
     public weak var navigationBarDelegate: NavigationBarViewDelegate?
-    private var pageControl = UIPageControl()
-    private var nextKeyboardButton: UIButton?
-    private var backButton: UIButton?
-    private var forwardButton: UIButton?
-    private var deleteButton: UIButton?
     private let settings = KeyboardSettings()
+    private var pageControl = UIPageControl()
+    private var nextKeyboardButton: NavigationButtonView?
+    private var backButton: NavigationButtonView?
+    private var forwardButton: NavigationButtonView?
+    private var deleteButton: NavigationButtonView?
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented - use init(frame:)")
+        fatalError("init(coder:) has not been implemented - use init()")
     }
     
     public override init(frame: CGRect) {
-        super.init(frame: frame)
+        fatalError("init(frame:) has not been implemented - use init()")
+    }
+    
+    public init() {
+        super.init(frame: CGRect())
         
         translatesAutoresizingMaskIntoConstraints = false
-        
         backgroundColor = settings.navigationBarBackgroundColor
+        
         setupPageControl()
         setupButtons()
+    }
+    
+    public override func didMoveToSuperview() {
+        addConstraints()
         addConstraintsToSubviews()
     }
     
@@ -41,10 +49,18 @@ public class NavigationBarView: UIView {
     }
     
     private func setupButtons() {
-        nextKeyboardButton = createButtonWithTitle("SWITCH")
-        backButton = createButtonWithTitle("<<")
-        forwardButton = createButtonWithTitle(">>")
-        deleteButton = createButtonWithTitle("DELETE")
+        
+        nextKeyboardButton = NavigationButtonView(type: NavigationButtonType.switchKeyboard)
+        nextKeyboardButton?.navigationButtonViewDelegate = self
+        
+        backButton = NavigationButtonView(type: NavigationButtonType.previousPage)
+        backButton?.navigationButtonViewDelegate = self
+        
+        forwardButton = NavigationButtonView(type: NavigationButtonType.nextPage)
+        forwardButton?.navigationButtonViewDelegate = self
+        
+        deleteButton = NavigationButtonView(type: NavigationButtonType.deleteCharacter)
+        deleteButton?.navigationButtonViewDelegate = self
         
         guard let nextKeyboardButton = nextKeyboardButton,
             let forwardButton = forwardButton,
@@ -53,45 +69,28 @@ public class NavigationBarView: UIView {
             fatalError("Could not setup buttons")
         }
         
-        nextKeyboardButton.addTarget(self, action: #selector(nextKeyboardButtonPressed), for: .touchUpInside)
-        forwardButton.addTarget(self, action: #selector(pagePlusOneButtonPressed), for: .touchUpInside)
-        backButton.addTarget(self, action: #selector(pageMinusOneButtonPressed), for: .touchUpInside)
-        deleteButton.addTarget(self, action: #selector(deleteButtonPressed), for: .touchUpInside)
-        
         self.addSubview(nextKeyboardButton)
         self.addSubview(forwardButton)
         self.addSubview(backButton)
         self.addSubview(deleteButton)
     }
     
-    private func createButtonWithTitle(_ title: String) -> UIButton {
-        let button = UIButton(type: .system)
-        button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        button.sizeToFit()
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .clear
-        button.setTitle(title, for: UIControlState())
-        button.tintColor = settings.navigationBarTintColor
-        return button
-    }
-    
     // MARK: methods
     
-    public func nextKeyboardButtonPressed() {
+    public func nextKeyboardPressed(sender: NavigationButtonView) {
         navigationBarDelegate?.nextKeyboardPressed(sender: self)
     }
     
-    public func deleteButtonPressed() {
+    public func deletePressed(sender: NavigationButtonView) {
         navigationBarDelegate?.deletePressed(sender: self)
     }
     
-    public func pagePlusOneButtonPressed() {
+    public func pagePlusOnePressed(sender: NavigationButtonView) {
         movePageControlUp(1)
         navigationBarDelegate?.pagePlusOnePressed(sender: self)
     }
     
-    public func pageMinusOneButtonPressed() {
+    public func pageMinusOnePressed(sender: NavigationButtonView) {
         movePageControlDown(1)
         navigationBarDelegate?.pageMinusOnePressed(sender: self)
     }
@@ -119,6 +118,11 @@ public class NavigationBarView: UIView {
     }
     
     // MARK: constraints
+    
+    private func addConstraints() {
+        constrainToSuperview(edges: [.left, .bottom, .right])
+        constrain(height: settings.navBarHeight)
+    }
     
     private func addConstraintsToSubviews() {
         
@@ -160,11 +164,6 @@ public class NavigationBarView: UIView {
                 button.constrain(.right, to: nextButton, .left)
             }
         }
-    }
-    
-    public func addConstraintsToSuperview() {
-        constrainToSuperview(edges: [.left, .bottom, .right])
-        constrain(height: CGFloat(settings.navBarHeight))
     }
 
 }

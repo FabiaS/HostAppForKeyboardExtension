@@ -7,35 +7,35 @@ public protocol PageViewDelegate: class {
 public class PageView: UIView, RowViewDelegate {
     
     public weak var pageViewDelegate: PageViewDelegate?
-    private var rowViews = [RowView]()
     private let settings = KeyboardSettings()
+    private var rowViews = [RowView]()
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented - use init(frame:pageNumber:)")
+        fatalError("init(coder:) has not been implemented - use init(pageNumber:)")
     }
     
     public override init(frame: CGRect) {
-        fatalError("init(frame:) has not been implemented - use init(frame:pageNumber:)")
+        fatalError("init(frame:) has not been implemented - use init(pageNumber:)")
     }
     
-    public init(frame: CGRect, pageNumber: Int) {
-        super.init(frame: frame)
+    public init(pageNumber: Int) {
+        super.init(frame: CGRect())
         
         translatesAutoresizingMaskIntoConstraints = false
         
-        let pageTitles = ButtonTitles(pageNumber: pageNumber)
-        setupRowsForPage(pageTitles)
+        let pageTitles = ButtonTitles(forPage: pageNumber)
+        setupRowsForPage(with: pageTitles)
+    }
+    
+    public override func didMoveToSuperview() {
         addConstraintsToSubviews()
     }
     
-    private func setupRowsForPage(_ pageTitles: ButtonTitles) {
-        for number in 1...settings.maxRowCount {
+    private func setupRowsForPage(with pageTitles: ButtonTitles) {
+        for rowNumber in 1...settings.maxRowCount {
             
-            guard let rowNumber = RowNumber(rawValue: number) else {
-                fatalError("Could not create rowNumber")
-            }
-            
-            let rowView = RowView(frame: CGRect(), rowTitles: pageTitles.getTitlesForRow(rowNumber))
+            let rowTitles = pageTitles.getTitles(forRow: rowNumber)
+            let rowView = RowView(titles: rowTitles)
             rowView.rowViewDelegate = self
             
             rowViews.append(rowView)
@@ -48,13 +48,19 @@ public class PageView: UIView, RowViewDelegate {
     }
     
     private func addConstraintsToSubviews() {
-        
         for (index, rowView) in rowViews.enumerated() {
             
             rowView.constrainToSuperview(edges: [.left, .right])
             
+            let keyboardHeight: CGFloat // ???
+            if UIDevice.current.orientation.isLandscape {
+                keyboardHeight = UIScreen.mainScreenHeight/2.0
+            } else {
+                keyboardHeight = UIScreen.mainScreenHeight/2.5
+            }
+            
             let maxNumberOfRows = settings.maxRowCount
-            let rowHeight = settings.keyboardHeight / CGFloat(maxNumberOfRows)
+            let rowHeight = (keyboardHeight-settings.navBarHeight) / CGFloat(maxNumberOfRows)
             rowView.constrain(height: rowHeight) // ??? 
             
             if index == maxNumberOfRows-1 {
