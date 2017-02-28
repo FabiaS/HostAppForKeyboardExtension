@@ -49,14 +49,7 @@ public class PagesView: UIView, PageViewDelegate {
     private func addConstraints() {
         constrainToSuperview(edges: [.left, .top])
         
-        let keyboardHeight: CGFloat // ???
-        if UIDevice.current.orientation.isLandscape {
-            keyboardHeight = UIScreen.mainScreenHeight/2.0
-        } else {
-            keyboardHeight = UIScreen.mainScreenHeight/2.5
-        }
-        
-        // ???
+        let keyboardHeight: CGFloat = UIScreen.mainScreenHeight/2.5
         let maxScrollWidth = UIScreen.mainScreenWidth * CGFloat(settings.maxPageCount)
         constrain(width: maxScrollWidth-8)
         constrain(height: keyboardHeight-settings.navBarHeight-2)
@@ -68,7 +61,7 @@ public class PagesView: UIView, PageViewDelegate {
             let page = getPage(number)
             page.constrainToSuperview(edges: [.top, .bottom])
             
-            page.constrain(width: UIScreen.mainScreenWidth) // ???
+            page.constrain(width: UIScreen.mainScreenWidth)
             
             if number == 1 {
                 page.constrainToSuperview(.left)

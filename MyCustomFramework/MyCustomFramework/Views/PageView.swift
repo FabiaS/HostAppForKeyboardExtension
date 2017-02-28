@@ -52,16 +52,10 @@ public class PageView: UIView, RowViewDelegate {
             
             rowView.constrainToSuperview(edges: [.left, .right])
             
-            let keyboardHeight: CGFloat // ???
-            if UIDevice.current.orientation.isLandscape {
-                keyboardHeight = UIScreen.mainScreenHeight/2.0
-            } else {
-                keyboardHeight = UIScreen.mainScreenHeight/2.5
-            }
-            
+            let keyboardHeight: CGFloat = UIScreen.mainScreenHeight/2.5
             let maxNumberOfRows = settings.maxRowCount
             let rowHeight = (keyboardHeight-settings.navBarHeight) / CGFloat(maxNumberOfRows)
-            rowView.constrain(height: rowHeight) // ??? 
+            rowView.constrain(height: rowHeight)
             
             if index == maxNumberOfRows-1 {
                 rowView.constrainToSuperview(.bottom)

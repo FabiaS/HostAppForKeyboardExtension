@@ -35,15 +35,9 @@ public class PagesScrollView: UIScrollView, UIScrollViewDelegate {
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         
-        let keyboardHeight: CGFloat // ???
-        if UIDevice.current.orientation.isLandscape {
-            keyboardHeight = UIScreen.mainScreenHeight/2.0
-        } else {
-            keyboardHeight = UIScreen.mainScreenHeight/2.5
-        }
-        
+        let keyboardHeight: CGFloat = UIScreen.mainScreenHeight/2.5
         let maxScrollWidth = UIScreen.mainScreenWidth * CGFloat(settings.maxPageCount)
-        contentSize = CGSize(width: maxScrollWidth, height: keyboardHeight-settings.navBarHeight) // ???
+        contentSize = CGSize(width: maxScrollWidth, height: keyboardHeight-settings.navBarHeight)
     }
     
     public func moveScrollViewOneUp() {
@@ -77,14 +71,7 @@ public class PagesScrollView: UIScrollView, UIScrollViewDelegate {
         constrainToSuperview(.left)
         constrainToSuperview(.top)
         
-        let keyboardHeight: CGFloat // ???
-        if UIDevice.current.orientation.isLandscape {
-            keyboardHeight = UIScreen.mainScreenHeight/2.0
-        } else {
-            keyboardHeight = UIScreen.mainScreenHeight/2.5
-        }
-        
-        // ???
+        let keyboardHeight: CGFloat = UIScreen.mainScreenHeight/2.5
         constrain(width: UIScreen.mainScreenWidth)
         constrain(height: keyboardHeight-settings.navBarHeight)
     }

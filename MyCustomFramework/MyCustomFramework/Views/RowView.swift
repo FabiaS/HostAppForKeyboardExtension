@@ -24,6 +24,9 @@ public class RowView: UIView, ButtonViewDelegate {
         translatesAutoresizingMaskIntoConstraints = false
         
         setupButtons(with: titles)
+    }
+    
+    public override func didMoveToSuperview() {
         addConstraintsToSubviews()
     }
     
@@ -49,7 +52,7 @@ public class RowView: UIView, ButtonViewDelegate {
             
             let maxNumberOfButtons = rowButtons.count
             let buttonWidth = UIScreen.mainScreenWidth / CGFloat(maxNumberOfButtons)
-            button.constrain(width: buttonWidth) // ???
+            button.constrain(width: buttonWidth)
             
             if index == 0 {
                 button.constrainToSuperview(.left)
