@@ -140,8 +140,8 @@
 				053D21F01D8AB142001DBAD4 /* AppDelegate.swift */,
 				053D21F21D8AB142001DBAD4 /* ViewController.swift */,
 				053D21F41D8AB142001DBAD4 /* Main.storyboard */,
-				053D21FA1D8AB142001DBAD4 /* Assets.xcassets */,
 				053D21FC1D8AB142001DBAD4 /* LaunchScreen.storyboard */,
+				053D21FA1D8AB142001DBAD4 /* Assets.xcassets */,
 				053D21FF1D8AB142001DBAD4 /* Info.plist */,
 			);
 			path = HostApp;
