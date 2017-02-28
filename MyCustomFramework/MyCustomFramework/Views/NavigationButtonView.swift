@@ -2,8 +2,8 @@ import UIKit
 
 public enum NavigationButtonType: String {
     case switchKeyboard = "SWITCH"
-    case previousPage = "<<"
-    case nextPage = ">>"
+    case goToPreviousPage = "<<"
+    case goToNextPage = ">>"
     case deleteCharacter = "DELETE"
 }
 
@@ -32,9 +32,9 @@ public class NavigationButtonView: UIButton {
         switch type {
         case .switchKeyboard:
             self.addTarget(self, action: #selector(nextKeyboardButtonPressed(_:)), for: .touchUpInside)
-        case .previousPage:
+        case .goToPreviousPage:
             self.addTarget(self, action: #selector(pageMinusOneButtonPressed(_:)), for: .touchUpInside)
-        case .nextPage:
+        case .goToNextPage:
             self.addTarget(self, action: #selector(pagePlusOneButtonPressed(_:)), for: .touchUpInside)
         case .deleteCharacter:
             self.addTarget(self, action: #selector(deleteButtonPressed(_:)), for: .touchUpInside)

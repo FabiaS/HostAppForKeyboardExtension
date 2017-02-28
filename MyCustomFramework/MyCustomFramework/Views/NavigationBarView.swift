@@ -53,10 +53,10 @@ public class NavigationBarView: UIView, NavigationButtonViewDelegate {
         nextKeyboardButton = NavigationButtonView(type: NavigationButtonType.switchKeyboard)
         nextKeyboardButton?.navigationButtonViewDelegate = self
         
-        backButton = NavigationButtonView(type: NavigationButtonType.previousPage)
+        backButton = NavigationButtonView(type: NavigationButtonType.goToPreviousPage)
         backButton?.navigationButtonViewDelegate = self
         
-        forwardButton = NavigationButtonView(type: NavigationButtonType.nextPage)
+        forwardButton = NavigationButtonView(type: NavigationButtonType.goToNextPage)
         forwardButton?.navigationButtonViewDelegate = self
         
         deleteButton = NavigationButtonView(type: NavigationButtonType.deleteCharacter)
