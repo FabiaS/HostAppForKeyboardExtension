@@ -42,8 +42,8 @@ public class NavigationBarView: UIView, NavigationButtonViewDelegate {
     
     private func setupPageControl() {
         pageControl.frame = CGRect()
-        pageControl.numberOfPages = settings.maxPageCount;
-        pageControl.currentPage = 0;
+        pageControl.numberOfPages = settings.maxPageCount
+        pageControl.currentPage = 0
         pageControl.backgroundColor = .clear
         addSubview(pageControl)
     }
